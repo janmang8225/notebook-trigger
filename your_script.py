@@ -12,10 +12,10 @@ Original file is located at
 import requests
 
 # Your Bot Token from BotFather
-TOKEN = '7689422169:AAFuE9v3SWy7Bq-lxXAdcAbpE1iW40pDOa8'
+TOKEN = '7734827684:AAHZHGg5_10KO00HZ6KJsEM0aarxQLvGMLM'
 
 # Your Chat ID
-CHAT_ID = '777990082'
+CHAT_ID = '1134215379'
 
 # Function to send a message
 def send_message(token, chat_id, message):
@@ -100,8 +100,8 @@ def monitor_stocks(stock_symbols, token, chat_id, interval=60):
 
 
 # Telegram Bot Credentials
-TOKEN = '7689422169:AAFuE9v3SWy7Bq-lxXAdcAbpE1iW40pDOa8'
-CHAT_ID = '777990082'
+TOKEN = '7734827684:AAHZHGg5_10KO00HZ6KJsEM0aarxQLvGMLM'
+CHAT_ID = '1134215379'
 
 # Stocks to Monitor
 STOCKS = ['TCS', 'RELIANCE', 'TATAPOWER' , 'IDEA' , 'YESBANK', 'IRFC' , 'ZOMATO', 'SUZLON', 'TATASTEEL' ,'MSTCLTD', 'TATAMOTORS', 'ONGC', 'PNB', 'LAURUSLABS', 'UPL', 'LTF', 'INFY', 'WIPRO', 'BAJAJFINSV', 'CIPLA', 'JSWSTEEL', 'HDFCBANK', 'TATACHEM', 'BPCL', 'SUNPHARMA', 'COROMANDEL', 'IGL', 'ICICIBANK', 'LT', 'M&M', 'OBEROIRLTY', 'SBIN', 'TATACONSUM', 'TVSMOTOR', 'PVRINOX', 'APOLLOHOSP', 'ASHOKLEY', 'AMBUJACEM', 'CONCOR', 'BIOCON' ]
