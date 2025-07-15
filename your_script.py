@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1v0ePe5m1VL3GhKuP0NUxzMxh8mIIdKqr
 """
 
-pip install python-telegram-bot
+# pip install python-telegram-bot
 
 import requests
 
