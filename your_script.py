@@ -12,10 +12,10 @@ pip install python-telegram-bot
 import requests
 
 # Your Bot Token from BotFather
-TOKEN = '7734827684:AAHZHGg5_10KO00HZ6KJsEM0aarxQLvGMLM'
+TOKEN = '7689422169:AAFuE9v3SWy7Bq-lxXAdcAbpE1iW40pDOa8'
 
 # Your Chat ID
-CHAT_ID = '1134215379'
+CHAT_ID = '777990082'
 
 # Function to send a message
 def send_message(token, chat_id, message):
@@ -76,32 +76,32 @@ def monitor_stocks(stock_symbols, token, chat_id, interval=60):
     notified_stocks = {symbol: None for symbol in stock_symbols}  # Tracks last breakout state
 
     # while True: # commented -> for single time use -> when button pressed
-        for stock_symbol in stock_symbols:
-            print(f"Checking {stock_symbol}...")
-            current_price, hist = fetch_yahoo_stock_data(stock_symbol, period="1mo")
+    for stock_symbol in stock_symbols:
+        print(f"Checking {stock_symbol}...")
+        current_price, hist = fetch_yahoo_stock_data(stock_symbol, period="1mo")
 
-            if current_price is None or hist is None:
-                continue
+        if current_price is None or hist is None:
+            continue
 
-            resistance, support, breakout_type = calculate_breakout(hist, current_price)
+        resistance, support, breakout_type = calculate_breakout(hist, current_price)
 
-            # Send notification only if there's a new breakout
-            if breakout_type and notified_stocks[stock_symbol] != breakout_type:
-                message = (f"Breakout Alert for {stock_symbol}!\n"
-                           f"Current Price: {current_price}\n"
-                           f"Resistance: {resistance}\n"
-                           f"Support: {support}\n"
-                           f"Type: {breakout_type}")
-                send_telegram_notification(token, chat_id, message)
-                notified_stocks[stock_symbol] = breakout_type  # Update last breakout state
+        # Send notification only if there's a new breakout
+        if breakout_type and notified_stocks[stock_symbol] != breakout_type:
+            message = (f"Breakout Alert for {stock_symbol}!\n"
+                       f"Current Price: {current_price}\n"
+                       f"Resistance: {resistance}\n"
+                       f"Support: {support}\n"
+                       f"Type: {breakout_type}")
+            send_telegram_notification(token, chat_id, message)
+            notified_stocks[stock_symbol] = breakout_type  # Update last breakout state
 
         # print("Waiting for next check...") # commented (for single time use)
         # time.sleep(interval)  # Wait for the specified interval before checking again # commented (for single time use)
 
 
 # Telegram Bot Credentials
-TOKEN = '7734827684:AAHZHGg5_10KO00HZ6KJsEM0aarxQLvGMLM'
-CHAT_ID = '1134215379'
+TOKEN = '7689422169:AAFuE9v3SWy7Bq-lxXAdcAbpE1iW40pDOa8'
+CHAT_ID = '777990082'
 
 # Stocks to Monitor
 STOCKS = ['TCS', 'RELIANCE', 'TATAPOWER' , 'IDEA' , 'YESBANK', 'IRFC' , 'ZOMATO', 'SUZLON', 'TATASTEEL' ,'MSTCLTD', 'TATAMOTORS', 'ONGC', 'PNB', 'LAURUSLABS', 'UPL', 'LTF', 'INFY', 'WIPRO', 'BAJAJFINSV', 'CIPLA', 'JSWSTEEL', 'HDFCBANK', 'TATACHEM', 'BPCL', 'SUNPHARMA', 'COROMANDEL', 'IGL', 'ICICIBANK', 'LT', 'M&M', 'OBEROIRLTY', 'SBIN', 'TATACONSUM', 'TVSMOTOR', 'PVRINOX', 'APOLLOHOSP', 'ASHOKLEY', 'AMBUJACEM', 'CONCOR', 'BIOCON' ]
