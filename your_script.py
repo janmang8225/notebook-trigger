@@ -28,7 +28,7 @@ def send_message(token, chat_id, message):
         print(f"Failed to send message: {response.text}")
 
 # Example usage
-message = "- - - - - - - -"
+message = "-- -- -- -- -- -- -- -- -- -- --"
 send_message(TOKEN, CHAT_ID, message)
 
 
@@ -99,12 +99,12 @@ def monitor_stocks(stock_symbols, token, chat_id):
             current_price = hist['Close'].iloc[-1]
             resistance, support, breakout_type = calculate_breakout(hist, current_price)
             if breakout_type:
-                msg = (f"----- {label} BREAKOUT -----\n"
-                       f"curr price: {current_price}\n"
-                       f"res: {resistance}\n"
-                       f"sup: {support}\n"
+                msg = (f"----- ----- {label} BREAKOUT ----- -----\n"
+                       f"curr price: {current_price:.2f}\n"
+                       f"res: {resistance:.2f}\n"
+                       f"sup: {support:.2f}\n"
                        f"type: {breakout_type}\n"
-                       f"-------------------------------")
+                       f"----- ----- ----- ----- ----- ----- -----")
                 breakout_messages.append(msg)
             else:
                 breakout_messages.append(f"NO {label} BREAKOUT")
